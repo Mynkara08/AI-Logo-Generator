@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Logo Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        input, button {
+            padding: 10px;
+            margin: 10px;
+            font-size: 16px;
+        }
+        img {
+            margin-top: 20px;
+            width: 300px;
+            height: auto;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>AI Logo Generator</h2>
+    <form method="POST">
+        <input type="text" name="logo_text" placeholder="Enter logo description" required>
+        <button type="submit">Generate Logo</button>
+    </form>
+
+    {% if logo_url %}
+        <h3>Generated Logo:</h3>
+        <img src="{{ logo_url }}" alt="Generated Logo">
+        <p><a href="{{ logo_url }}" target="_blank">View Full Image</a></p>
+    {% endif %}
+
+</body>
+</html>
